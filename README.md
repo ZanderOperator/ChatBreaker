@@ -50,7 +50,7 @@ section.
 -->
 This library is fairly simple. It ALS hooks a function that basically filters through long strings, look for ' '(space) chars, and break the message in two line if string length is larger than ```LINE_BREAKING_LENGTH```. 
 
-It implements this feature in two PAWN natives:
+It implements this feature in two ```a_samp``` natives:
 ```
 SendClientMessage(playerid, color, const string[]);
 SendClientMessageToAll(color, const string[]);
