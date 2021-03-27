@@ -1,0 +1,10 @@
+{
+	"user": "ZanderOperator",
+	"repo": "ChatBreaker",
+	"entry": "test.pwn",
+	"output": "test.amx",
+	"dependencies": [
+		"pawn-lang/samp-stdlib",
+		"pawn-lang/YSI-Includes@5.x"
+	]
+}
