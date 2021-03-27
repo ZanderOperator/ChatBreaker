@@ -1,5 +1,8 @@
 // ChatBreaker include v1.3 by Zander Operator 
-#include <YSI_Coding\y_va>
+
+#if !defined _INC_y_va
+    #error You need to "#include <YSI_Coding\y_va>" before using ChatBreaker library.
+#endif
 
 const LINE_BREAKING_LENGTH = 90;
 

@@ -48,6 +48,17 @@ the source code, direct users there. If not, list your API and describe it well
 in this section. If your library is passive and has no API, simply omit this
 section.
 -->
+This library is fairly simple. It ALS hooks a function that basically filters through long strings, look for ' '(space) chars, and break the message in two line if string length is larger than ```LINE_BREAKING_LENGTH```. 
+
+It implements this feature in two PAWN natives:
+```
+SendClientMessage(playerid, color, const string[]);
+SendClientMessageToAll(color, const string[]);
+```
+
+Also, it supports passing embedded colors. For example: your string has 102 chars, embedded color starts at 60th char, and last space is on 86th char. Function will break/split that string on 86th character, add 3 dots on the place of space in the first line, and "pass" the embedded color at the start of the rest of the string with 3 dots on beginning of the string. 
+
+If there is no space in between 20 chars before the ```LINE_BREAK_LENGTH``` is reached, chat line simply won't break/split, and will be sent in its original, unbroken state.
 
 ## Testing
 
@@ -61,3 +72,4 @@ To test, simply run the package:
 ```bash
 sampctl package run
 ```
+Example short ```SendClientMessage``` and long ```SendClientMessageToAll``` will be executed on ```OnPlayerConnect``` callback.
